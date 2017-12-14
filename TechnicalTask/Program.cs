@@ -14,7 +14,8 @@ namespace TechnicalTask
         static void Main(string[] args)
         {
             try
-            {
+            {                   
+
                 //Function to record data to the text file
                 RecordDataToFile(filePath);
                 //Function to read data from the text file
