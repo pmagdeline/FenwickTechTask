@@ -18,6 +18,7 @@ namespace TechnicalTask
 
                 int[] commands = { 1, 2, 3 };
                 Console.WriteLine("Enter" + "\n" + " 1 for Help " + "\n" + " 2 for Record " + "\n" + " 3 for Summary ");
+                Console.WriteLine("----------------------------------------------------------------------------------");
                 int command = Int32.Parse(Console.ReadLine());
                 Boolean quitNow = false;
                 while (!quitNow)
@@ -37,7 +38,7 @@ namespace TechnicalTask
                             DisplayFileSummary(filePath);
                             return;
                         default:
-                            Console.WriteLine("The selection has to be between 1 and 3. Please re-enter");
+                            Console.WriteLine("The selection has to be between 1 and 3.");
                             return;
                     }
                 }
