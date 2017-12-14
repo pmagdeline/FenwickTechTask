@@ -19,20 +19,21 @@ namespace TechnicalTask
                 int[] commands = { 1, 2, 3 };
                 Console.WriteLine("Enter 1 for Help, 2 for Record and 3 for Summary");
                 int command = Int32.Parse(Console.ReadLine());
-                //Console.WriteLine(command);
                 Boolean quitNow = false;
                 while (!quitNow)
                 {
                     switch (command)
                     {
                         case 1:
-                            Console.WriteLine("help");
+                            DisplayHelp();
                             return;
                         case 2:
+                            Console.WriteLine("For record command, needs to give record size and numeric values");
                             RecordDataToFile(filePath);
                             ReadDataFromFile(filePath);
                             return;
                         case 3:
+                            Console.WriteLine("Summary command summarizes the information recorded using Record command");
                             DisplayFileSummary(filePath);
                             return;
                         default:
@@ -121,6 +122,19 @@ namespace TechnicalTask
                 throw new FileNotFoundException(@"[Technicaltask.txt not in c:\ directory]", e);
             }
 
+
+        }
+        public static void DisplayHelp()
+        {
+            try
+            {
+                Console.WriteLine(File.ReadAllText(@"C:\\Help.txt"));
+            }
+            catch (FileNotFoundException e)
+            {
+                Console.WriteLine("[Text File Missing] {0}", e);
+                throw new FileNotFoundException(@"[Help.txt not in c:\ directory]", e);
+            }
 
         }
         static void DisplayFileSummary(string fpath)

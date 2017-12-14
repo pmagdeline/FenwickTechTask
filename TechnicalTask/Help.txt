@@ -1,0 +1,18 @@
+﻿The program will have 3 ‘actions’:
+
+Record: Save one or more values into a specified file
+Stats.exe record filepath value [value 2..value n]
+
+Summary: Print a summary of the values into the console. The summary should be formatted as a text table (see examples below)
+Stats.exe summarise filepath
+
+Help: Print a short informative message of how the program can be used
+
+Example Session
+> Stats.exe help
+Informative message printed
+
+> Stats.exe record stats.txt 12.1
+> Stats.exe record stats.txt 4.8 20.0
+> Stats.exe record stats.txt 9.9
+> Stats.exe summary stats.txt
