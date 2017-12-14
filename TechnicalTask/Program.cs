@@ -14,14 +14,39 @@ namespace TechnicalTask
         static void Main(string[] args)
         {
             try
-            {                   
+            {
 
+                int[] commands = { 1, 2, 3 };
+                Console.WriteLine("Enter 1 for Help, 2 for Record and 3 for Summary");
+                int command = Int32.Parse(Console.ReadLine());
+                //Console.WriteLine(command);
+                Boolean quitNow = false;
+                while (!quitNow)
+                {
+                    switch (command)
+                    {
+                        case 1:
+                            Console.WriteLine("help");
+                            return;
+                        case 2:
+                            RecordDataToFile(filePath);
+                            ReadDataFromFile(filePath);
+                            return;
+                        case 3:
+                            DisplayFileSummary(filePath);
+                            return;
+                        default:
+                            Console.WriteLine("The selection has to be between 1 and 3. Please re-enter");
+                            return;
+                    }
+                }
+                /*
                 //Function to record data to the text file
                 RecordDataToFile(filePath);
                 //Function to read data from the text file
                 ReadDataFromFile(filePath);
                 //Function to display the summary of the text file
-                DisplayFileSummary(filePath);
+                DisplayFileSummary(filePath);*/
 
             }
             catch (Exception e)
