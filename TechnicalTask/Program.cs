@@ -17,7 +17,7 @@ namespace TechnicalTask
             {
 
                 int[] commands = { 1, 2, 3 };
-                Console.WriteLine("Enter 1 for Help, 2 for Record and 3 for Summary");
+                Console.WriteLine("Enter" + "\n" + " 1 for Help " + "\n" + " 2 for Record " + "\n" + " 3 for Summary ");
                 int command = Int32.Parse(Console.ReadLine());
                 Boolean quitNow = false;
                 while (!quitNow)
@@ -41,14 +41,7 @@ namespace TechnicalTask
                             return;
                     }
                 }
-                /*
-                //Function to record data to the text file
-                RecordDataToFile(filePath);
-                //Function to read data from the text file
-                ReadDataFromFile(filePath);
-                //Function to display the summary of the text file
-                DisplayFileSummary(filePath);*/
-
+                
             }
             catch (Exception e)
             {
@@ -93,7 +86,6 @@ namespace TechnicalTask
             catch (Exception e)
             {
                 Console.WriteLine("Exception: " + e.Message);
-
             }
 
         }
